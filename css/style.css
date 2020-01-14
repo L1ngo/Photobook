@@ -3,7 +3,7 @@
 .container {
     display: block;
     width: 100%;
-    max-width: 1170px;
+    max-width: 1080px;
     margin: 0 auto;
     padding: 0 15px;
     box-sizing: border-box;
@@ -11,8 +11,28 @@
 
 /* Main */
 
+.fader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: .5s;
+}
+
+.fader_visible {
+    opacity: 1;
+    visibility: visible;
+}
+
 .header {
     background-color: white;
+    position: relative;
+    z-index: 3;
 }
 
 .header-wrapper {
@@ -22,11 +42,17 @@
 }
 
 .header-burger {
+    display: block;
+    z-index: 5;
     position: relative;
     background-color: transparent;
     border: 0;
     width: 25px;
     height: 18px;
+}
+
+.header-burger_open .header-burger-menu {
+    transform: scale(0);
 }
 
 .header-burger-menu,
@@ -38,6 +64,7 @@
     height: 2px;
     width: 100%;
     background: black;
+    transition: .3s;
 }
 
 .header-burger::before {
@@ -48,6 +75,47 @@
 .header-burger::after {
     content: '';
     top: 100%;
+}
+
+.header-burger_open:after {
+    transform: translate(0, -9px) rotate(45deg);
+}
+
+.header-burger_open:before {
+    transform: translate(0, 8px) rotate(-45deg);
+}
+
+.main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.main-nav-list {
+    text-align: center;
+    font-family: "PF Agora Sans Pro", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.main-nav-list li a {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.main-nav-list li a:hover {
+    color: #ffd200;
+
 }
 
 .header-block {
@@ -71,6 +139,7 @@
 }
 
 .header-log svg {
+    display: block;
     width: 100%;
 }
 
@@ -89,6 +158,16 @@
     border-color: black;
 }
 
+.tel-icon {
+    display: none;
+}
+
+.tel-icon svg {
+    display: block;
+    width: 100%;
+}
+
+
 .header-block .tel {
     padding: 20px 35px;
     background-color: #ffd200;
@@ -97,6 +176,8 @@
 
 /* Main */
 .main {
+    height: calc(100vh - 80px);
+    min-height: 300px;
     background-image: url(../images/Main-banner.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -104,12 +185,12 @@
 }
 
 .main-wrapper {
-    padding: calc(55 / 1080 * 100%) 0 calc(265 / 1080 * 100%);
+    padding-top: 40px;
     text-align: center;
 }
 
 .main-title {
-    margin-bottom: 25px;
+    margin: 0 auto 25px;
     color: #000;
     font-family: "PF Agora Sans Pro XThin", sans-serif;
     font-weight: 100;
@@ -118,7 +199,7 @@
 }
 
 .main-subtitle {
-    margin-bottom: 70px;
+    margin: 0 auto 70px;
     color: #000;
     font-family: "PF Agora Sans Pro", sans-serif;
     font-weight: 300;
@@ -334,6 +415,7 @@
 }
 
 .solution-list-item-footer {
+    text-align: center;
     font-family: "PF Agora Sans Pro Thin", sans-serif;
     font-weight: 100;
     font-size: 21px;
@@ -511,7 +593,6 @@
 }
 
 .footer-wrapper {
-    text-align: center;
     padding: 50px 0;
 }
 
@@ -521,7 +602,6 @@
 }
 
 .footer-list {
-    text-align: left;
     margin-right: 80px;
     padding-top: 30px;
     min-width: 150px;
@@ -537,8 +617,11 @@
 }
 
 .footer-list li a {
+    display: block;
+    width: 100%;
     text-decoration: none;
     color: black;
+    transition: .3s;
 }
 
 .footer-list li a:hover {
@@ -554,6 +637,8 @@
 .footer-social-list {
     display: flex;
     justify-content: flex-start;
+    margin-right: 0;
+    margin-left: auto;
 }
 
 .footer-social-list li {
@@ -623,6 +708,19 @@
         padding: 40px 10px 50px;
     }
 
+    .advantage-list {
+        flex-direction: column;
+    }
+
+    .advantage-list li {
+        margin: auto;
+    }
+
+    .advantage-list li:nth-last-child(n+2) {
+        margin-right: 0;
+        margin: auto;
+    }
+
     .app-title {
         margin-bottom: 40px;
     }
@@ -641,35 +739,233 @@
         padding: 30px 0 0;
     }
 
-    .solution-list-item-body {
-
-
-    }
-
     .solution-list {
         flex-direction: column;
         margin: auto;
     }
 
-    .solution-sublist{
-    margin: auto;
-}
+    .solution-sublist {
+        margin-left: 40px;
+    }
 
-    .solution-list li{
+    .solution-list li {
+        width: 50%;
         margin: 0 auto 30px;
     }
 
-    .testimonials{
+    .testimonials {
         background-position: 20% 50%;
     }
 
-    .testimonials-wrapper{
+    .testimonials-wrapper {
         width: 100%;
     }
 
-    .testimonials-image{
-        width: 15%;
-        padding-top: 15%;
+    .testimonials-author-info {
+        padding: 35px 0;
+    }
+
+    .testimonials-image {
+        width: 20%;
+        padding-top: 20%;
+    }
+
+    .btn-wrapper {
+        margin-bottom: 50px;
+    }
+
+    .terms-wrapper {
+        padding: 50px 0 60px;
+    }
+
+    .terms-list {
+        flex-direction: column;
+        padding-bottom: 50px;
+    }
+
+    .terms-list li {
+        margin: 0 auto 20px;
+        max-width: 400px;
+    }
+
+    .footer-wrapper-flex {
+        flex-wrap: wrap;
+    }
+
+    .footer-list {
+        width: calc(100% / 2 - 8px);
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .footer-list:nth-child(2n + 1) {
+        margin-right: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-block a:nth-last-child(-n+1) {
+        margin-left: 30px;
+    }
+
+    .header-block .tel {
+        padding: 10px 10px;
+        border-radius: 50%;
+    }
+
+    .tel {
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+
+    .tel-line {
+        display: none;
+    }
+
+    .tel-icon {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .main-title {
+        font-size: 35px;
+        line-height: 39px;
+    }
+
+    .main-subtitle {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .step-list {
+        flex-wrap: wrap;
+        width: calc(100% / 2);
+        margin: auto;
+        padding: 15px 0 25px;
+    }
+
+    .step-list li {
+        margin-bottom: 20px;
+    }
+
+    .step-list li:nth-child(2n + 1) {
+        margin-right: 30px;
+    }
+
+    .advantage-wrapper {
+        padding: 20px 0 25px;
+    }
+
+    .app-title {
+        margin-bottom: 25px;
+        font-size: 50px;
+        line-height: 54px;
+    }
+
+    .advantage-list li {
+        padding: 0;
+    }
+
+    .section-title {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .section-subtitle {
+        margin-bottom: 30px;
+        font-size: 15px;
+        line-height: 19px;
+    }
+
+    .dft-btn {
+        padding: 20px 0;
+        font-size: 18px;
+        line-height: 22px;
+        max-width: 300px;
+    }
+
+    .solution-wrapper {
+        padding: 15px 0 0;
+    }
+
+    .solution-list li {
+        width: 100%;
+    }
+
+    .solution-sublist {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .header-wrapper {
+        flex-direction: column;
+    }
+
+    .header-block {
+        width: 100%;
+    }
+
+    .step-list li:nth-child(2n + 1) {
+        margin-right: 0;
+    }
+
+    .advantage-list li {
+        width: 75%;
+    }
+
+    .testimonials-wrapper {
+        padding: 20px 0;
+    }
+
+    .app-title {
+        text-align: center;
+    }
+
+    .testimonials-author {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonials-image {
+        margin: auto;
+        width: 50%;
+        padding-top: 50%;
+    }
+
+    .testimonials-author-info {
+        text-align: center;
+    }
+
+    .footer-wrapper-flex {
+        text-align: center;
+    }
+
+    .footer-list {
+        margin: auto;
+        padding-top: 15px;
+    }
+
+    .footer-list:nth-child(2n + 1) {
+        margin: auto;
+    }
+
+    .footer-wrapper {
+        padding: 25px 0;
+    }
+
+    .footer-flex-logo {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-social-list li {
+        margin: 0 auto 20px;
     }
 
 
