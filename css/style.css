@@ -3,7 +3,7 @@
 .container {
     display: block;
     width: 100%;
-    max-width: 1080px;
+    max-width: 1110px;
     margin: 0 auto;
     padding: 0 15px;
     box-sizing: border-box;
@@ -49,10 +49,21 @@
     border: 0;
     width: 25px;
     height: 18px;
+    transition: .3s;
+}
+
+.header-burger:hover {
+    width: 28px;
+    height: 21px;
 }
 
 .header-burger_open .header-burger-menu {
     transform: scale(0);
+}
+
+.header-burger_open:hover{
+    width: 25px;
+    height: 18px;
 }
 
 .header-burger-menu,
@@ -128,6 +139,11 @@
 .header-log {
     display: block;
     width: 35px;
+    transition: .3s;
+}
+
+.header-log:hover {
+    width: 40px;
 }
 
 .header-block button:nth-last-child(-n+1) {
@@ -156,6 +172,13 @@
     color: #302D1F;
     border-bottom: 1px dashed;
     border-color: black;
+    transition: .3s;
+}
+
+
+.tel-line:hover {
+    color: white;
+    border-color: white;
 }
 
 .tel-icon {
@@ -277,11 +300,14 @@
 
 .advantage-wrapper {
     text-align: center;
-    padding: 60px 20px 80px;
+    padding: 0 20px 80px;
 }
 
 .app-title {
-    margin-bottom: 65px;
+    text-align: center;
+    padding-top: 60px;
+    margin: 0 0 65px;
+
     font-family: "PF Agora Sans Pro XThin", sans-serif;
     font-weight: 100;
     font-size: 60px;
@@ -315,7 +341,7 @@
 
 .advantage-list li {
     width: calc(100% / 3);
-    padding: 0 20px;
+    margin-bottom: 100px;
 }
 
 .advantage-list li:nth-last-child(n+2) {
@@ -332,7 +358,6 @@
 }
 
 .section-subtitle {
-    margin-bottom: 100px;
     text-align: center;
     font-family: "PF Agora Sans Pro", sans-serif;
     font-weight: 300;
@@ -354,31 +379,64 @@
 }
 
 /* Solution */
-.solution-wrapper {
-    padding: 70px 0 110px;
-    text-align: center;
-}
 
 .solution-list {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 110px;
     min-height: 410px;
+    text-align: center;
 }
+
+.solution-list:nth-child(2n + 1){
+    margin-right: 70px;
+}
+
 
 .solution-list li {
-    background-color: #ffd200;
-    border-radius: 5px;
-    width: 315px;
     padding: 45px 5px 15px;
+    width: calc(210 / 730 * 100%);
+    border-radius: 5px;
+    background-color: #ffd200;
+    transition: .3s;
 }
 
+.solution-list li:hover {
+    box-shadow: 0 3px 23px -3px rgba(0, 0, 0, 0.75);
+    transform: translateY(-20px);
+}
+
+.solution-list-item {
+    text-decoration: none;
+    color: black;
+}
+
+.solution-list-item-best {
+    text-transform: uppercase;
+    border-bottom: 25px solid #ffd200;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 4px;
+    width: calc(400 / 730 * 100%);
+    margin: auto;
+    font-family: "PF Agora Sans Pro", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #e11a27;
+}
+
+
 .solution-list-item-header {
-    margin-bottom: 45px;
     text-align: center;
+    padding: 45px 0;
+    background-color: #ffd200;
+    border-radius: 10px 10px 0 0;
     font-family: "PF Agora Sans Pro", sans-serif;
     font-weight: 400;
     font-size: 36px;
     line-height: 40px;
+
 }
 
 .solution-list-item-body {
@@ -404,6 +462,11 @@
     width: 100%;
     text-align: left;
     background-color: white;
+}
+
+.solution-sublist li:hover {
+    box-shadow: none;
+    transform: none;
 }
 
 .solution-list-item-price {
@@ -435,6 +498,12 @@
     width: 50%;
 }
 
+.testimonials-wrapper .app-title {
+    margin: 0 0 65px;
+    padding-top: 0;
+    text-align: left;
+}
+
 .testimonials-author {
     margin-bottom: 25px;
     display: flex;
@@ -442,13 +511,13 @@
 }
 
 .testimonials-image {
-    margin-right: 30px;
-    border-radius: 50%;
-    overflow: hidden;
+    position: relative;
     width: 30%;
     height: 0;
+    margin-right: 30px;
     padding-top: 30%;
-    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .testimonials-image img {
@@ -462,7 +531,8 @@
 }
 
 .testimonials-author-info {
-    padding: 50px 0;
+    align-self: center;
+
 }
 
 .testimonials-author-title {
@@ -481,7 +551,7 @@
 }
 
 .testimonials-desc {
-    padding-bottom: 15px;
+    margin-bottom: 15px;
     font-family: "PF Agora Sans Pro", sans-serif;
     font-weight: 300;
     font-size: 18px;
@@ -489,24 +559,52 @@
 }
 
 .testimonials-desc-2 {
-    padding-bottom: 40px;
-}
-
-.nxt-btn {
-    background-color: transparent;
-    color: black;
-    border: 0;
-    border-color: transparent;
-    font-family: "PF Agora Sans Pro Thin", sans-serif;
-    font-weight: 100;
-    font-size: 16px;
-    line-height: 20px;
+    margin-bottom: 40px;
 }
 
 .btn-wrapper {
     display: flex;
     justify-content: space-between;
     margin-bottom: 115px;
+}
+
+.nxt-btn {
+    display: flex;
+    border: 0;
+    border-color: transparent;
+    background-color: transparent;
+    color: black;
+    font-family: "PF Agora Sans Pro Thin", sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 20px;
+    transition: .3s;
+}
+
+.nxt-btn:hover{
+    background-color: #ffd200;
+    border-radius: 5px;
+}
+
+.ntx-btn-arrow {
+    max-width: 18px;
+    margin-left: 10px;
+}
+
+.ntx-btn-arrow svg{
+    display: block;
+    width: 100%;
+}
+
+.ntx-btn:hover{
+    background-color: #ffd200;
+    border-radius: 5px;
+}
+
+.prev-btn-arrow{
+    transform: rotate(180deg);
+    margin-left: 0;
+    margin-right: 10px
 }
 
 
@@ -518,7 +616,7 @@
 .terms-list {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 75px;
+    margin-bottom: 75px;
 }
 
 .terms-list li {
@@ -526,9 +624,6 @@
     width: 100%;
     background-color: #f7f0e6;
     border-radius: 0 0 10px 10px;
-}
-
-.terms-list-item {
 }
 
 .terms-title {
@@ -579,12 +674,9 @@
     margin-bottom: 15px;
 }
 
-.terms-subtitle-r {
+.terms-subtitle-red {
     color: #e11a27;
-    font-family: "PF Agora Sans Pro", sans-serif;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
 }
 
 /* Footer */
