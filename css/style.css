@@ -275,7 +275,7 @@
 }
 
 .step-list-image {
-    margin: 0 auto 20px;
+    margin: 0 auto 17px;
     padding: 38px;
     width: 140px;
     height: 140px;
@@ -315,7 +315,7 @@
 .app-title {
     text-align: center;
     padding-top: 50px;
-    margin: 0 0 50px;
+    margin: 0 0 52px;
 
     font-family: "PF Agora Sans Pro XThin", sans-serif;
     font-weight: 100;
@@ -511,12 +511,12 @@
 }
 
 .testimonials-wrapper {
-    padding: 35px 0 75px 60px;
+    padding: 35px 0 55px 60px;
     width: 50%;
 }
 
 .testimonials-wrapper .app-title {
-    margin: 0 0 30px 55px;
+    margin-bottom: 45px;
     padding-top: 0;
     text-align: left;
 }
@@ -524,16 +524,16 @@
 .testimonials-author {
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 25px;
+    margin-bottom: 21px;
     align-items: center;
 }
 
 .testimonials-image {
     position: relative;
-    width: 30%;
+    width: 29%;
     height: 0;
     margin-right: 30px;
-    padding-top: 27%;
+    padding-top: 29%;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -549,7 +549,7 @@
 }
 
 .testimonials-author-title {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-family: "PF Agora Sans Pro", sans-serif;
     font-weight: 300;
     font-size: 30px;
@@ -628,19 +628,18 @@
 
 .terms-list {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 75px;
+    justify-content: space-around;
+    margin: 0 25px 73px;
 }
 
 .terms-list li {
-    width: calc(100%/ 3 - 45px);
+    width: calc(100%/ 3 - 70px);
     background-color: #f7f0e6;
     border-radius: 0 0 10px 10px;
 }
 
 .terms-title {
-    padding: 20px 0;
-    margin-bottom: 5px;
+    padding: 15px 0;
     text-align: center;
     background-color: #ffd200;
     border-radius: 10px 10px 0 0;
@@ -653,8 +652,8 @@
 }
 
 .terms-info {
-    min-height: 250px;
-    padding: 25px 35px 50px;
+    min-height: 235px;
+    padding: 25px 35px 0;
 }
 
 .terms-subtitle {
@@ -667,7 +666,7 @@
 
 .terms-sublist {
     list-style: disc;
-    margin: 0 0 15px 20px;
+    margin-left: 25px;
     font-family: "PF Agora Sans Pro", sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -675,7 +674,7 @@
 }
 
 .terms-list-item-text {
-    margin-bottom: 15px;
+    margin-bottom: 9px;
     font-family: "PF Agora Sans Pro", sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -683,7 +682,8 @@
 }
 
 .terms-sublist li {
-    margin-bottom: 15px;
+    margin: 0 0 10px 4px;
+    width: 100%;
 }
 
 .terms-subtitle-red {
@@ -697,7 +697,7 @@
 }
 
 .footer-wrapper {
-    padding: 50px 0;
+    padding: 50px 60px;
 }
 
 .footer-wrapper-flex {
@@ -706,8 +706,8 @@
 }
 
 .footer-list {
-    margin-right: 80px;
-    padding-top: 30px;
+    margin-right: 83px;
+    padding-top: 27px;
     min-width: 150px;
     border-top: 1px solid;
     font-family: "PF Agora Sans Pro", sans-serif;
@@ -717,7 +717,7 @@
 }
 
 .footer-list li {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .footer-list li a {
@@ -769,6 +769,7 @@
 }
 
 .footer-info {
+    text-align: center;
     font-family: "PF Agora Sans Pro", sans-serif;
     font-weight: 400;
     font-size: 14px;
